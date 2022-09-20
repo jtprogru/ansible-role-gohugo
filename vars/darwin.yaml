@@ -1,4 +1,3 @@
 ---
-
-__gohugo_download_url: 'https://github.com/gohugoio/hugo/releases/download/v{{ gohugo_version }}/hugo_{{ gohugo_version }}_darwin-universal.tar.gz'
-__gohugo_download_extended_url: 'https://github.com/gohugoio/hugo/releases/download/v{{ gohugo_version }}/hugo_extended_{{ gohugo_version }}_darwin-universal.tar.gz'
+__gohugo_download_url: https://github.com/gohugoio/hugo/releases/download/v{{ gohugo_version }}/hugo_{{ gohugo_version }}_darwin-universal.tar.gz
+__gohugo_download_extended_url: https://github.com/gohugoio/hugo/releases/download/v{{ gohugo_version }}/hugo_extended_{{ gohugo_version }}_darwin-universal.tar.gz
