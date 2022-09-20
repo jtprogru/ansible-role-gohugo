@@ -1,0 +1,14 @@
+---
+exclude_paths:
+  - ./molecule/
+  - .github/
+parseable: true
+quiet: false
+skip_list:
+  - "401"
+  - "204"
+  - "403"
+  - "702"
+  - "305"
+use_default_rules: true
+verbosity: 3

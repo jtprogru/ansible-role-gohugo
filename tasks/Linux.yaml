@@ -1,0 +1,36 @@
+---
+- name: jtprogru.gohugo | include OS-specific variables.
+  ansible.builtin.include_vars: linux_amd64.yml
+  when: ansible_architecture == "x86_64"
+
+- name: jtprogru.gohugo | include OS-specific variables.
+  ansible.builtin.include_vars: linux_arm64.yml
+  when: ansible_architecture == "arm64"
+
+- name: jtprogru.gohugo | update facts.
+  ansible.builtin.set_fact:
+    gohugo_download_url: "{{ __gohugo_download_url }}"
+    gohugo_download_extended_url: "{{ __gohugo_download_extended_url }}"
+
+- name: jtprogru.gohugo | download base hugo.
+  ansible.builtin.unarchive:
+    src: "{{ gohugo_download_url }}"
+    dest: "{{ __gohugo_destination_unarchive }}"
+    remote_src: true
+  when: not gohugo_extended
+
+- name: jtprogru.gohugo | download extended hugo.
+  ansible.builtin.unarchive:
+    src: "{{ gohugo_download_extended_url }}"
+    dest: "{{ __gohugo_destination_unarchive }}"
+    remote_src: true
+  when: gohugo_extended
+
+- name: jtprogru.gohugo | copy hugo binary.
+  ansible.builtin.copy:
+    src: "{{ __gohugo_destination_unarchive }}/hugo"
+    dest: "{{ __gohugo_installation_path }}/hugo"
+    owner: root
+    group: root
+    mode: '0755'
+    remote_src: true

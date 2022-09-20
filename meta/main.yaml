@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  role_name: gohugo
+  namespace: jtprogru
+  author: Mihael Savin
+  description: Ansible role for install [Hugo](https://gohugo.io)
+  company: Owl Legion
+
+  standalone: true
+
+  license: WTFPL
+
+  min_ansible_version: "2.9"
+
+  platforms:
+    - name: Ubuntu
+      versions:
+        - bionic
+        - focal
+
+  galaxy_tags:
+    - configuration
+    - development
+    - install
+
+dependencies: []

@@ -1,0 +1,8 @@
+---
+- name: jtprogru.gohugo | include tasks for Linux.
+  include_tasks: Linux.yaml
+  when: ansible_system == 'Linux'
+
+- name: jtprogru.gohugo | include tasks for Darwin.
+  include_tasks: Darwin.yaml
+  when: ansible_system == 'Darwin'
